@@ -101,9 +101,16 @@ program main
   y=size(field,2)
 
   field(:,:) %aliveq=.false.
+  
+! INITIALIZE GLIDER
+!------------------------------------
   field(10:12,10)%aliveq=.true.
   field(12,9)%aliveq=.true.
   field(11,8)%aliveq=.true.
+!------------------------------------
+  
+! RANDOMIZE INITIAL DATA
+!-------------------------------------------
 !  do j=1,y
 !    do i=1,x
 !        call random_number(num)
@@ -112,7 +119,7 @@ program main
 !        end if
 !    end do
 !  end do
-
+!------------------------------------------
   do k=1,1000
     call update_count(field)
     call show_field(field)
